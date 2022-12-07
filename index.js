@@ -321,10 +321,10 @@ const HashedFolder = function HashedFolder(name, children, options, isRootElemen
 };
 
 HashedFolder.prototype.toString = function (padding = '') {
-  const first = `${padding}{ name: '${this.name}', hash: '${this.hash}',\n`;
+  const first = `${padding}{ "name": "${this.name}", "hash": "${this.hash}",\n`;
   padding += '  ';
 
-  return `${first}${padding}children: ${this.childrenToString(padding)}}`;
+  return `${first}${padding}"children": ${this.childrenToString(padding)}}`;
 };
 
 HashedFolder.prototype.childrenToString = function (padding = '') {
@@ -332,7 +332,7 @@ HashedFolder.prototype.childrenToString = function (padding = '') {
     return '[]';
   } else {
     const nextPadding = padding + '  ';
-    const children = this.children.map(child => child.toString(nextPadding)).join('\n');
+    const children = this.children.map(child => child.toString(nextPadding)).join(',\n');
     return `[\n${children}\n${padding}]`;
   }
 };
@@ -343,7 +343,7 @@ const HashedFile = function HashedFile(name, hash, encoding) {
 };
 
 HashedFile.prototype.toString = function (padding = '') {
-  return padding + "{ name: '" + this.name + "', hash: '" + this.hash + "' }";
+  return padding + `{ "name": "` + this.name + `", "hash": "` + this.hash + `" }`;
 };
 
 function isFunction(any) {
