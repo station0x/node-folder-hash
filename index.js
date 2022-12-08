@@ -324,7 +324,7 @@ HashedFolder.prototype.toString = function (padding = '') {
   const first = `${padding}{ "name": "${this.name}", "hash": "${this.hash}",\n`;
   padding += '  ';
 
-  return `${first}${padding}"${this.name}-children": ${this.childrenToString(padding)}}`;
+  return `${first}${padding}"${this.name}@children": ${this.childrenToString(padding)}}`;
 };
 
 HashedFolder.prototype.childrenToString = function (padding = '') {
