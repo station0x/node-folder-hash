@@ -37,6 +37,7 @@
   "dependencies": {
     "debug": "^4.3.3",
     "graceful-fs": "~4.2.9",
+    "hash-wasm": "^4.9.0",
     "minimatch": "~5.0.0"
   },
   "devDependencies": {

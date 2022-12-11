@@ -1,7 +1,9 @@
 ﻿const crypto = require('crypto'),
-  debug = require('debug'),
-  minimatch = require('minimatch'),
-  path = require('path');
+debug = require('debug'),
+minimatch = require('minimatch'),
+path = require('path');
+
+// use hash-wasm for hashing and fdir for directory walking for performance (https://www.npmjs.com/package/hash-wasm, https://www.npmjs.com/package/fdir)
 
 const defaultOptions = {
   algo: 'sha1', // see crypto.getHashes() for options
